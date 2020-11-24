@@ -198,11 +198,22 @@ a:focus {
 	flex-direction: row;
 }
 
-.intro {
+.flexy.intro {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-x: 50%;
 	background-color: #aaa;
+}
+
+.flexy.intro::before {
+	z-index: 0;
+	background: #fff;
+	opacity: 0.4;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 
@@ -459,15 +470,15 @@ a:focus {
 }
 
 .menu--open .menu__item:nth-child(2) {
-	transition-delay: 0.165s;
+	transition-delay: 0.185s;
 }
 
 .menu--open .menu__item:nth-child(3) {
-	transition-delay: 0.195s;
+	transition-delay: 0.235s;
 }
 
 .menu--open .menu__item:nth-child(4) {
-	transition-delay: 0.225s;
+	transition-delay: 0.285s;
 }
 
 .menu .menu__link {
