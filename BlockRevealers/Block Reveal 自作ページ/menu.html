@@ -66,17 +66,6 @@
 				<img class="content__image" src="img/cat02.png" alt="Some image" />
 			</div>
 		</section>
-		<section class="content flexy flexy--row">
-			<p class="content__heading">サンプルエフェクト</p>
-			<div class="triggers">
-				<button id="rev-trigger-1" class="btn btn--trigger">左から右へ</button>
-				<button id="rev-trigger-2" class="btn btn--trigger">右から左へ</button>
-				<button id="rev-trigger-3" class="btn btn--trigger">下から上 + α</button>
-				<button id="rev-trigger-4" class="btn btn--trigger">上から下 + α</button>
-				<button id="rev-trigger-5" class="btn btn--trigger">文字ズームイン</button>
-			</div>
-			<h2 id="rev-12" class="content__title content__title--medium">Superlative</h2>
-		</section>
 		<p class="reference">参考ページ：<a href="https://tympanus.net/codrops/2016/12/21/block-reveal-effects/" target="_blank"
 				rel="noopener">Block
 				Reveal Effects</a></p>
@@ -106,7 +95,6 @@
 				var navEl = document.querySelector('nav.menu'),
 					revealer = new RevealFx(navEl),
 					closeCtrl = navEl.querySelector('.btn--close');
-
 
 				// ドロワー開始時
 				document.querySelector('.btn--menu').addEventListener('click', function () {
@@ -271,113 +259,6 @@
 					rev10.reveal();
 					rev11.reveal();
 					watcher_3.destroy();
-				});
-
-				//************************ Example 3 - api examples ********************************
-
-				var rev12 = new RevealFx(document.querySelector('#rev-12')),
-					trigger_1 = document.getElementById('rev-trigger-1'),
-					trigger_2 = document.getElementById('rev-trigger-2'),
-					trigger_3 = document.getElementById('rev-trigger-3'),
-					trigger_4 = document.getElementById('rev-trigger-4'),
-					trigger_5 = document.getElementById('rev-trigger-5');
-
-				trigger_1.addEventListener('click', function () {
-					rev12.reveal({
-						bgcolor: '#80bf9b',
-						duration: 300,
-						onStart: function (contentEl, revealerEl) {
-							contentEl.style.opacity = 0;
-						},
-						onCover: function (contentEl, revealerEl) {
-							contentEl.style.opacity = 1;
-						}
-					});
-				});
-
-				trigger_2.addEventListener('click', function () {
-					rev12.reveal({
-						bgcolor: '#80bf9b',
-						duration: 300,
-						direction: 'rl',
-						onStart: function (contentEl, revealerEl) {
-							contentEl.style.opacity = 0;
-						},
-						onCover: function (contentEl, revealerEl) {
-							contentEl.style.opacity = 1;
-						}
-					});
-				});
-
-				trigger_3.addEventListener('click', function () {
-					rev12.reveal({
-						bgcolor: '#80bf9b',
-						easing: 'easeOutExpo',
-						direction: 'bt',
-						onStart: function (contentEl, revealerEl) {
-							anime.remove(contentEl);
-							contentEl.style.opacity = 0;
-						},
-						onCover: function (contentEl, revealerEl) {
-							anime({
-								targets: contentEl,
-								duration: 800,
-								delay: 80,
-								easing: 'easeOutExpo',
-								translateY: [40, 0],
-								opacity: [0, 1]
-							});
-						}
-					});
-				});
-
-				trigger_4.addEventListener('click', function () {
-					rev12.reveal({
-						bgcolor: '#80bf9b',
-						duration: 300,
-						direction: 'tb',
-						onStart: function (contentEl, revealerEl) {
-							anime.remove(contentEl);
-							contentEl.style.opacity = 0;
-						},
-						onCover: function (contentEl, revealerEl) {
-							anime({
-								targets: contentEl,
-								duration: 500,
-								delay: 50,
-								easing: 'easeOutBounce',
-								translateY: [-40, 0],
-								opacity: {
-									value: [0, 1],
-									duration: 300,
-									easing: 'linear'
-								}
-							});
-						}
-					});
-				});
-
-				trigger_5.addEventListener('click', function () {
-					rev12.reveal({
-						bgcolor: '#80bf9b',
-						duration: 400,
-						easing: 'easeInOutQuad',
-						onStart: function (contentEl, revealerEl) {
-							anime.remove(contentEl);
-							contentEl.style.opacity = 0;
-						},
-						onCover: function (contentEl, revealerEl) {
-							contentEl.style.opacity = 1;
-							anime({
-								targets: contentEl,
-								duration: 800,
-								delay: 80,
-								easing: 'easeOutExpo',
-								scale: [0.5, 1],
-								opacity: [0, 1]
-							});
-						}
-					});
 				});
 			}
 		})();
