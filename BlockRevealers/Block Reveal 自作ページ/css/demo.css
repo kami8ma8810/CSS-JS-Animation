@@ -38,7 +38,7 @@ a:focus {
 	color: #2d2d30;
 }
 
-.hidden {
+.is-hidden {
 	position: absolute;
 	overflow: hidden;
 	width: 0;
